@@ -22,8 +22,22 @@ var CODE string = os.Args[2];
 var CHIP string = os.Args[3];
 var VAL string = os.Args[4];
 
+var numbers = map[string]bool {
+    "0": true,
+    "1": true,
+	"2": true,
+	"3": true,
+	"4": true,
+	"5": true,
+	"6": true,
+	"7": true,
+	"8": true,
+	"9": true,
+}
+
 func main() {
 	fmt.Println("Starting...");
+	
 	base64.RawStdEncoding.WithPadding(base64.NoPadding)
 
 	for range time.Tick(time.Second * 2) {
@@ -59,7 +73,11 @@ func getStats() string {
 	if (temp == "") {
 		temp = " "
 	} else {
-		temp = "/"+temp[1:3]+"C "
+		if numbers[string(temp[3])] {
+			temp = "/"+temp[1:4]+"C "
+		} else {
+			temp = "/"+temp[1:3]+"C "
+		}
 	}
 	
 	
