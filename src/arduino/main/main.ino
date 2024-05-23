@@ -104,11 +104,11 @@ void loop() {
   lcd.setCursor(8, 0);
   lcd.print(String(timeClient.getHours()) + ":" + (timeClient.getMinutes() < 10 ? "0" + String(timeClient.getMinutes()) : String(timeClient.getMinutes())));
   lcd.setCursor(0, 1);
-  lcd.print(pc1);
+  lcd.print(String(pc1));
   lcd.setCursor(0, 2);
-  lcd.print(pc2);
+  lcd.print(String(pc2));
   lcd.setCursor(0, 3);
-  lcd.print(pc3);
+  lcd.print(String(pc3));
   delay(1000);
   lcd.clear();
 }
